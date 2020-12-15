@@ -1,0 +1,14 @@
+---
+- name: install vcftools
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Install build tools
+    apt:
+      name: build-essential
+
+  - name: Checkout vcftools
+    git:
+      repo: https://github.com/vcftools/vcftools.git
+      dest: /home/micha/vcftools
